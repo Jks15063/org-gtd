@@ -28,6 +28,9 @@ First, clone from GitHub:
 
 To use this contribution add it to your =~/.spacemacs=
 
+Add 'gtd' to =dotspacemacs-configuration-layers=
+
+Add to =user-config=:
 #+begin_src emacs-lisp
   (setq-default dotspacemacs-configuration-layers '(gtd))
 #+end_src
