@@ -19,21 +19,21 @@ The original document is also included, though some settings here may be differe
 *IMPORTANT* You'd better put this layer behind org layer, otherwise it will increase launch time significantly. I haven't figured out why. Any help will be appreciated.
 
 * Install
-First, clone from GitHub:
+  First, clone from GitHub:
 
-#+begin_src sh
+  #+begin_src sh
   cd ~/.emacs.d/private
   git clone https://github.com/Jks15063/org-gtd.git gtd
-#+end_src
+  #+end_src
 
-To use this contribution add it to your =~/.spacemacs=
+  To use this contribution:
 
-Add 'gtd' to =dotspacemacs-configuration-layers=
+  Add =gtd= to =dotspacemacs-configuration-layers=
 
-Add to =user-config=:
-#+begin_src emacs-lisp
+  Add to =user-config=:
+  #+begin_src emacs-lisp
   (setq-default dotspacemacs-configuration-layers '(gtd))
-#+end_src
+  #+end_src
 
 * Key bindings
 
