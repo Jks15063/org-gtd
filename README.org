@@ -30,7 +30,7 @@ The original document is also included, though some settings here may be differe
 
   Add =gtd= to =dotspacemacs-configuration-layers=
 
-  Add to =user-config=:
+  Add to =dotspacemacs/user-config=:
   #+begin_src emacs-lisp
   (setq-default dotspacemacs-configuration-layers '(gtd))
   #+end_src
