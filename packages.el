@@ -571,9 +571,6 @@ so change the default 'F' binding in the agenda to allow both"
     (interactive)
     (save-excursion
       (beginning-of-line 0)
-      ;; Following line from original document by Bernt Hansen
-      ;; will lead to an error, next to it is the corrected form.
-      ;; (org-remove-empty-drawer-at "LOGBOOK" (point))
       (org-remove-empty-drawer-at (point))))
 
   (add-hook 'org-clock-out-hook 'bh/remove-empty-drawer-on-clock-out 'append)
@@ -585,24 +582,23 @@ so change the default 'F' binding in the agenda to allow both"
   ;; Use full outline paths for refile targets - we file directly with IDO
   (setq org-refile-use-outline-path t)
 
-  ;; ;; Targets complete directly with IDO
-  ;; (setq org-outline-path-complete-in-steps nil)
+  ;; Targets complete directly with IDO
+  (setq org-outline-path-complete-in-steps nil)
 
   ;; Allow refile to create parent tasks with confirmation
   (setq org-refile-allow-creating-parent-nodes (quote confirm))
+  ;; Use IDO for both buffer and file completion and ido-everywhere to t
+  ;; (setq org-completion-use-ido t)
+  ;; (setq ido-everywhere t)
+  ;; (setq ido-max-directory-size 100000)
+  ;; (ido-mode (quote both))
+  ;; Use the current window when visiting files and buffers with ido
+  ;; (setq ido-default-file-method 'selected-window)
+  ;; (setq ido-default-buffer-method 'selected-window)
+  ;; Use the current window for indirect buffer display
+  ;; (setq org-indirect-buffer-display 'current-window)
 
-  ;;   ;; ;; Use IDO for both buffer and file completion and ido-everywhere to t
-  ;;   ;; (setq org-completion-use-ido t)
-  ;;   ;; (setq ido-everywhere t)
-  ;;   ;; (setq ido-max-directory-size 100000)
-  ;;   ;; (ido-mode (quote both))
-  ;;   ;; ;; Use the current window when visiting files and buffers with ido
-  ;;   ;; (setq ido-default-file-method 'selected-window)
-  ;;   ;; (setq ido-default-buffer-method 'selected-window)
-  ;;   ;; ;; Use the current window for indirect buffer display
-  ;;   ;; (setq org-indirect-buffer-display 'current-window)
-
-;;;; Refile settings
+  ;; Refile settings
   ;; Exclude DONE state tasks from refile targets
   (defun bh/verify-refile-target ()
     "Exclude todo keywords with a done state from refile targets"
