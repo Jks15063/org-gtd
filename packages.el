@@ -74,6 +74,9 @@
 (defun gtd/post-init-org-agenda()
   (require 'org-habit)
 
+  ; position the habit graph on the agenda to the right of the default
+  (setq org-habit-graph-column 50)
+
   (global-set-key (kbd "<f12>") 'org-agenda)
 
   (setq org-agenda-span 'day)
@@ -395,6 +398,12 @@ so change the default 'F' binding in the agenda to allow both"
   (add-hook 'org-agenda-mode-hook
             '(lambda () (hl-line-mode 1))
             'append)
+
+  ;; (setq org-clock-sound "/usr/local/lib/tngchime.wav")
+  (setq org-deadline-warning-days 30)
+
+  ;; enfore todo dependencies
+  (setq org-enforce-todo-dependencies t)
 
   ;; Keep tasks with dates on the global todo lists
   (setq org-agenda-todo-ignore-with-date nil)
